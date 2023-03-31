@@ -237,8 +237,12 @@ void FastRouteCore::bendEdge(
   const TreeNode& endpoint = treenodes[treeedge->n2];
   if (blocked_positions.front().second == blocked_positions.back().second) {
     // blocked positions are horizontally aligned
-    short y = (new_route_y.back() == y_min) ? new_route_y.back() + 1
-                                            : new_route_y.back() - 1;
+    short y;
+      if (new_route_y.back() == y_min) {
+    y = new_route_y.back() + 1;
+      } else {
+        y = new_route_y.back() - 1;
+    }
     new_route_x.push_back(new_route_x.back());
     new_route_y.push_back(y);
 
@@ -252,8 +256,12 @@ void FastRouteCore::bendEdge(
   } else if (blocked_positions.front().first
              == blocked_positions.back().first) {
     // blocked positions are vertically aligned
-    short x = (new_route_x.back() == x_min) ? new_route_x.back() + 1
-                                            : new_route_x.back() - 1;
+    short x;
+      if (new_route_x.back() == x_min) {
+        x = new_route_x.back() + 1;
+      } else {
+        x = new_route_x.back() - 1;
+      }
     new_route_x.push_back(x);
     new_route_y.push_back(new_route_y.back());
 

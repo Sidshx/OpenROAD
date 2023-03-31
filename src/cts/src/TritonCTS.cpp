@@ -884,7 +884,10 @@ void TritonCTS::findClockRoots(sta::Clock* clk,
     odb::dbITerm* instTerm;
     odb::dbBTerm* port;
     network_->staToDb(pin, instTerm, port);
-    odb::dbNet* net = instTerm ? instTerm->getNet() : port->getNet();
+    if (instTerm) {                                                               //converted ternary operator in for loop to simple if-else
+     net = instTerm->getNet(); } else {
+       net = port->getNet();
+    }
     clockNets.insert(net);
   }
 }

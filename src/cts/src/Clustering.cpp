@@ -103,15 +103,22 @@ void Clustering::iterKmeans(const unsigned iter,
 
   std::vector<int> solution(sinks_.size());
   float max_silh = -1;
-  auto tmp_means = means;
+  float prev_silh = -1;
+  auto prev_means = means;
+
   for (unsigned i = 0; i < iter; ++i) {
-    const float silh = Kmeans(n, cap, max, power, tmp_means);
+    if (i>0 && means == prev_means) {
+      max_silh = prev_silh;
+    } else {
+    const float silh = Kmeans(n, cap, max, power, means);
     if (silh > max_silh) {
-      max_silh = silh;
+      max_silh = silh; }
       for (size_t j = 0; j < sinks_.size(); ++j) {
         solution[j] = sinks_[j].cluster_idx;
       }
-      means = tmp_means;
+      prev_means = means;
+      prev_silh = silh;
+
     }
   }
 
