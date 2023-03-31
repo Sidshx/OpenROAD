@@ -19,31 +19,17 @@
 7. Change the Cpp code in the OpenROAD-flow-scripts/tools/OpenROAD/tools
 8. Repeat from **Step 1** again
 ## Final Run Time after code modifications
-![image](https://user-images.githubusercontent.com/58599984/228294893-6f5bfca1-6386-42da-9984-0972c6a86e2b.png)
-## Changes made in the [gpuSolver.cu](https://github.com/Eyantra698Sumanto/OpenROAD-flow-scripts/tree/7nmcontest/tools/OpenROAD1/src/gpl/src)
-![image](https://user-images.githubusercontent.com/58599984/228294648-7c1df1da-ca05-454f-8cf7-8aec489ac4b5.png)
+![image](https://user-images.githubusercontent.com/73933646/229144094-27e4023c-49ae-44fe-b394-60e9ae72eb53.png)
+
+## Improvements made in the [Clustering.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/cts/src/Clustering.cpp)
+![image](https://user-images.githubusercontent.com/73933646/229144240-20e68fc5-7e37-477b-82ba-00eea02b38d3.png)
 
 
-### Improvement in the Placement Stage timing
-![image](https://user-images.githubusercontent.com/58599984/228300190-5390745f-affb-45b8-99f0-7465afaf3bba.png)
+### Changes in the [maze.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/grt/src/fastroute/src/maze.cpp)
+![image](https://user-images.githubusercontent.com/73933646/229144560-08cc98ab-8b05-4605-89eb-2332b0f81a11.png)
 
-## Changes made in [nesterovPlace.cpp](https://github.com/Eyantra698Sumanto/OpenROAD-flow-scripts/tree/7nmcontest/tools/OpenROAD1/src/gpl/src)
-![image](https://user-images.githubusercontent.com/58599984/228318635-0d807721-50e5-43c9-8b89-e968c676301a.png)
-
-### Improvement in the Placement Stage timing
-![image](https://user-images.githubusercontent.com/58599984/228318784-6d66e01f-953c-4f8b-95b7-022c0f16a582.png)
-
-## Changes made in [solver.cpp](https://github.com/Eyantra698Sumanto/OpenROAD-flow-scripts/tree/7nmcontest/tools/OpenROAD1/src/gpl/src)
-![image](https://user-images.githubusercontent.com/58599984/228338100-e357c884-8731-41ab-96a8-e6cfcba29169.png)
-
-### Improvement in the Placement Stage timing
-![image](https://user-images.githubusercontent.com/58599984/228324932-738966d1-c5aa-481c-849c-eb550c3a912e.png)
-
-## Changes made in [fftsg.cpp](https://github.com/Eyantra698Sumanto/OpenROAD-flow-scripts/tree/7nmcontest/tools/OpenROAD1/src/gpl/src) rdft() function
-![image](https://user-images.githubusercontent.com/58599984/228340068-a972819b-7efd-45c1-8b33-170c0901b5f5.png)
-
-### Improvement in the Placement Stage timing
-![image](https://user-images.githubusercontent.com/58599984/228339817-daa6aee9-70d0-46d2-8ded-62c77061b3eb.png)
+## Changes made in [TritonCTS.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/cts/src/TritonCTS.cpp)
+![image](https://user-images.githubusercontent.com/73933646/229145126-f19cfdb2-da50-417b-bc3c-8cdbc4a222b8.png)
 
 ## Conclusion and Future Scope
 Thus, we have obtained considerable improvement in the timings by makinf changes in the C code of each block.
