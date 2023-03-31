@@ -24,15 +24,44 @@
 ## Improvements made in the [Clustering.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/cts/src/Clustering.cpp)
 ![image](https://user-images.githubusercontent.com/73933646/229144240-20e68fc5-7e37-477b-82ba-00eea02b38d3.png)
 
+1. Means is copied to tmp_means and is unnecessarily leading to memory consumption, so we are calling means directly, 
+2. Here Kmeans is called for each iteration of i, but its result remains the same if the means value hasn't changed. So we instead do a check ‘means == prev_means’, if true, the current value of max_silh is not updated, and the previous value of prev_silh is used instead; otherwise, the Kmeans function is used, and the silh score is updated appropriately.
 
-### Changes in the [maze.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/grt/src/fastroute/src/maze.cpp)
+### Runtime before making code changes
+![image](https://user-images.githubusercontent.com/73933646/229146789-b700a9e1-c102-49fb-9cec-011c7894ed21.png)
+
+### Runtime improvements post code changes
+![image](https://user-images.githubusercontent.com/73933646/229147207-c849e95a-c580-49fd-bb42-4295a3684633.png)
+
+## Changes in the [maze.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/grt/src/fastroute/src/maze.cpp)
 ![image](https://user-images.githubusercontent.com/73933646/229144560-08cc98ab-8b05-4605-89eb-2332b0f81a11.png)
+1. Ternary operators changed to if else statements in line 240 and 260
+
+### Runtime before making code changes
+![image](https://user-images.githubusercontent.com/73933646/229147638-e41d3444-493a-4713-8ae4-56d362e8f880.png)
+
+
+### Runtime improvements post code changes
+![image](https://user-images.githubusercontent.com/73933646/229147736-f528fd98-5cf8-4a7b-b033-0e6eadf58829.png)
+
+
 
 ## Changes made in [TritonCTS.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/cts/src/TritonCTS.cpp)
 ![image](https://user-images.githubusercontent.com/73933646/229145126-f19cfdb2-da50-417b-bc3c-8cdbc4a222b8.png)
+1. Converted Ternary Operator to simple If-else statement as an attempt to improve  runtime. Expected better results in runtime in this code due to the presence of ternary block which is in a for loop iterating over each object in a leaf pin.
+
+
+### Runtime before making code changes
+![image](https://user-images.githubusercontent.com/73933646/229148103-46936e38-e7f3-449b-8b25-c844dee7c357.png)
+
+
+
+### Runtime improvements post code changes
+![image](https://user-images.githubusercontent.com/73933646/229148226-de53a8c8-413e-4c53-b162-7adef2a67d46.png)
+
 
 ## Conclusion and Future Scope
-Thus, we have obtained considerable improvement in the timings by makinf changes in the C code of each block.
+Thus, we have obtained considerable improvement in the timings by making changes in the Cpp code of majorly the cts and grt tool.
 
 Further Optimization can be done by changing the other blocks of the code and reducing the complexity of codes.
 
