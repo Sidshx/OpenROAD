@@ -2,8 +2,8 @@
 ![image](https://user-images.githubusercontent.com/73933646/229139296-880b3b65-d2af-433e-97ed-804112b0a4d4.png)
 
 ## Design Name: gcd
-## Literature Survey Report:
-## Final Report: 
+## [Literature Survey Report](https://docs.google.com/document/d/1_EmDNZOXrt2lwTWwUcMA-rv0W4KkOsrSRfKJxpDRPps/edit?usp=sharing)
+## [Final Report](https://docs.google.com/document/d/1Y1fpabV6v860-7_wdSvFU7Y5UtaJgEVNsNxSbfJNCIw/edit?usp=sharing)
 ## Machine specifications
 ![image](https://user-images.githubusercontent.com/73933646/229139551-a519f7dc-0e37-487f-8628-327fa67b3411.png)
 
@@ -18,10 +18,14 @@
 6. Note the timings from the logs
 7. Change the Cpp code in the OpenROAD-flow-scripts/tools/OpenROAD/tools
 8. Repeat from **Step 1** again
+
+## Run Time before code modifications
+![image](https://user-images.githubusercontent.com/73933646/229151955-fc61d944-3a63-4dd8-ae45-51c14dbafab7.png)
+
 ## Final Run Time after code modifications
 ![image](https://user-images.githubusercontent.com/73933646/229144094-27e4023c-49ae-44fe-b394-60e9ae72eb53.png)
 
-## Improvements made in the [Clustering.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/cts/src/Clustering.cpp)
+## 1. Changes made in the [Clustering.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/cts/src/Clustering.cpp)
 ![image](https://user-images.githubusercontent.com/73933646/229144240-20e68fc5-7e37-477b-82ba-00eea02b38d3.png)
 
 1. Means is copied to tmp_means and is unnecessarily leading to memory consumption, so we are calling means directly, 
@@ -33,7 +37,7 @@
 ### Runtime improvements post code changes
 ![image](https://user-images.githubusercontent.com/73933646/229147207-c849e95a-c580-49fd-bb42-4295a3684633.png)
 
-## Changes in the [maze.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/grt/src/fastroute/src/maze.cpp)
+## 2. Changes in the [maze.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/grt/src/fastroute/src/maze.cpp)
 ![image](https://user-images.githubusercontent.com/73933646/229144560-08cc98ab-8b05-4605-89eb-2332b0f81a11.png)
 1. Ternary operators changed to if else statements in line 240 and 260
 
@@ -46,7 +50,7 @@
 
 
 
-## Changes made in [TritonCTS.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/cts/src/TritonCTS.cpp)
+## 3. Changes made in [TritonCTS.cpp](https://github.com/Sidshx/OpenROAD/blob/7nmcontest/src/cts/src/TritonCTS.cpp)
 ![image](https://user-images.githubusercontent.com/73933646/229145126-f19cfdb2-da50-417b-bc3c-8cdbc4a222b8.png)
 1. Converted Ternary Operator to simple If-else statement as an attempt to improve  runtime. Expected better results in runtime in this code due to the presence of ternary block which is in a for loop iterating over each object in a leaf pin.
 
