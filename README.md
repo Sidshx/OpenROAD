@@ -1,3 +1,6 @@
+![openroad_cerificate](https://github.com/Sidshx/OpenROAD/assets/73933646/f689b6b8-f6c5-4cb3-b60e-b1e90052b465)
+
+
 # The OpenROAD 7nm Physical Design Contest
 ![image](https://user-images.githubusercontent.com/73933646/229139296-880b3b65-d2af-433e-97ed-804112b0a4d4.png)
 
